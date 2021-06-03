@@ -77,7 +77,7 @@ function updateCurrentScore(random, activePlayer) {
 function randomNumber() {
   // losuje numer od 1 do 6 i wybiera na jego podstawie img kostki o takim samym numerze oczek co numer wylosowany
   let random = Math.trunc(Math.random() * 6) + 1;
-  document.querySelector('.dice').src = `dice-${random}.png`;
+  document.querySelector('.dice').src = `images/dice-${random}.png`;
   return random;
 }
 function removeHidden() {
