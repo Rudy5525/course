@@ -1,6 +1,6 @@
 'use strict';
 // console.log(this);
-
+/*
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
   //   console.log(this);
@@ -29,3 +29,14 @@ matilda.calcAge = jonas.calcAge;
 matilda.calcAge();
 
 const f = jonas.calcAge;
+*/
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+jonas.greet();
