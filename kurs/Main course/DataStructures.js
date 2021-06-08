@@ -1,15 +1,23 @@
 'use strict';
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const weekdays = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
 const openingHours = {
-  thu: {
+  Thursday: {
     open: 12,
     close: 22,
   },
-  fri: {
+  Friday: {
     open: 11,
     close: 23,
   },
-  sat: {
+  Saturday: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -39,8 +47,127 @@ const restaurant = {
     console.log(mainIng, otherIng);
   },
 };
+/*
+const question = new Map([
+  ['question', 'What is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct :D'],
+  [false, 'Try Again'],
+]);
+console.log(question);
+
+// Convert object to map
+
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+//Quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = 3;
+console.log(answer);
+
+const result = question.get(answer === question.get('correct'));
+console.log(result);
+
+// Convert map to array
+console.log(...question);
+*/
+// Maps
+/*
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear()
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+*/
+/*
+// Sets
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(staff).size);
+*/
+/*
+// Object Property NAMES
+const properties = Object.keys(openingHours);
+// console.log(properties);
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+// console.log(openStr);
+
+// Object Property VALUES
+const values = Object.values(openingHours);
+// console.log(values);
+// Entire Object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}.`);
+}
+*/
+/*
 console.log(restaurant.openingHours.mon);
-// with optional chaining
+// with optional chaining (?.)
 console.log(restaurant.openingHours.mon?.open);
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -53,6 +180,7 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 // Arrays
 const users = [{ name: 'Jonas', email: 'hello@jonas' }];
 console.log(users[1]?.name ?? 'User does not exist');
+*/
 /*
 // For of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -303,3 +431,80 @@ printGoals(...game.scored);
 team1 < team2 && console.log('Team 1 is more likely to win');
 team2 < team1 && console.log('Team 2 is more likely to win');
 */
+//////  Coding Challenge
+/*
+// 1
+
+const goals = Object.entries(game.scored);
+
+for (const [number, player] of goals) {
+  console.log(`Goal ${Number(number) + 1}: ${player}`);
+}
+
+// 2
+
+const odds = Object.values(game.odds);
+let avg = 0;
+for (const x of odds) {
+  avg += x;
+}
+avg = Number((avg / odds.length).toFixed(2));
+
+// 3
+
+const odds2 = Object.entries(game.odds);
+
+for (const [team, odd] of odds2) {
+  if (team === 'x') {
+    console.log(`Odd of draw: ${odd}`);
+  } else {
+    let teamName = game[team];
+    console.log(`Odd of victory ${teamName}: ${odd}`);
+  }
+}
+
+// 4
+
+const scorers = {};
+const shooters = Object.values(game.scored);
+
+for (let player of shooters) {
+  if (player in scorers) {
+    scorers[player] = scorers[player] + 1;
+  } else {
+    scorers[player] = 1;
+  }
+}
+console.log(scorers);
+*/
+
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow card'],
+]);
+
+// 1
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+// 2
+gameEvents.delete(64);
+console.log(gameEvents);
+// 3
+const numberOfEvents = gameEvents.size;
+console.log(
+  `An event happened, on average, every ${90 / numberOfEvents} minutes.`
+);
+// 4
+for (const [minute, event] of gameEvents) {
+  const half = minute <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
+  console.log(`${half} ${minute}: ${event}`);
+}
