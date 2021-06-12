@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weight Tracker</title>
+  </head>
+  <body>
+    <section class="container">
+      <table class="table">
+        <tr>
+          <th>No.</th>
+          <th>Date</th>
+          <th>Weight</th>
+          <th>Change</th>
+        </tr>
+      </table>
+      <button class="btn">
+        <span class="update">⚖ Update your weight ⚖</span>
+      </button>
+    </section>
+    <div class="modal hidden">
+      <form class="form" onsubmit="return false">
+        <label for="date">Data: <input type="date" name="" id="date" /></label>
+        <label for="weight">Waga: <input type="number" id="weight" /></label>
+        <button class="submit">Zatwierdź</button>
+      </form>
+    </div>
+  </body>
+</html>

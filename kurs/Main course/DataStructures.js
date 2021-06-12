@@ -47,6 +47,7 @@ const restaurant = {
     console.log(mainIng, otherIng);
   },
 };
+/*
 // Split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmannn'.split(' '));
@@ -92,6 +93,7 @@ const planesInLine = function (n) {
 planesInLine(7);
 planesInLine(8);
 planesInLine(2);
+*/
 
 /*  //Working with arrays part 2
 const airline = 'TAP Air Portugal';
@@ -654,3 +656,32 @@ for (const [minute, event] of gameEvents) {
   console.log(`${half} ${minute}: ${event}`);
 }
 */
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+document.querySelector('button').addEventListener('click', transform);
+
+function transform() {
+  convert(getWords());
+}
+
+function convert(array) {
+  let i = 0;
+  for (let words of array) {
+    let [first, second] = words;
+    let firstLowercase = first.toLowerCase();
+    second = second.toLowerCase();
+    let secondUppercase = second[0].toUpperCase() + second.slice(1);
+    let fullString = (firstLowercase + secondUppercase).trim();
+    i++;
+    console.log(`${i}. ${fullString.padEnd(20)} ${'✔'.repeat(i)}`);
+  }
+}
+function getWords() {
+  const text = document.querySelector('textarea').value;
+  const words = text.split('\n');
+  let differentWords = [];
+  for (let word of words) {
+    differentWords.push(word.split('_'));
+  }
+  return differentWords;
+}

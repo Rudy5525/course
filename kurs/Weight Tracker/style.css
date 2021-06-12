@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 99vh;
+}
+.container {
+  margin: auto;
+  //   display: flex;
+  //   justify-content: space-around;
+}
+.btn {
+  padding: 10px;
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: orange;
+}
+.btn:hover {
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+}
+.update {
+  position: relative;
+  text-align: center;
+  font-size: x-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.modal {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.hidden {
+  display: none;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  justify-content: space-around;
+}
+.submit {
+  width: 25%;
+}
+input {
+  padding: 5px;
+  margin: 5px;
+}
+table {
+  border: 1px solid black;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+th {
+  border: 1px solid black;
+}
+td {
+  width: 25%;
+  border: 1px solid black;
+  text-align: center;
+}
