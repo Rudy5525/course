@@ -656,6 +656,7 @@ for (const [minute, event] of gameEvents) {
   console.log(`${half} ${minute}: ${event}`);
 }
 */
+/*
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 document.querySelector('button').addEventListener('click', transform);
@@ -685,3 +686,4 @@ function getWords() {
   }
   return differentWords;
 }
+*/
