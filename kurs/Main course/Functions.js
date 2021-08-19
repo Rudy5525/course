@@ -172,33 +172,33 @@
 
 // Coding challenge
 
-const poll = {
-  question: 'What is your favorite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    const answer = prompt(
-      `${this.question}\n ${this.options} \n Write option number`
-    );
-    answer >= 0 && answer <= 3 ? this.answers[answer]++ : alert('Wrong answer');
-    this.displayResults(this.banswers);
-  },
-  displayResults(type) {
-    if (typeof type === 'Array') {
-      console.log(type);
-    } else if (typeof type === 'String') {
-      console.log(`Poll results are ${type}`);
-    }
-  },
-};
-document
-  .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswer.bind(poll));
+// const poll = {
+//   question: 'What is your favorite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     const answer = prompt(
+//       `${this.question}\n ${this.options} \n Write option number`
+//     );
+//     answer >= 0 && answer <= 3 ? this.answers[answer]++ : alert('Wrong answer');
+//     this.displayResults(this.banswers);
+//   },
+//   displayResults(type) {
+//     if (typeof type === 'Array') {
+//       console.log(type);
+//     } else if (typeof type === 'String') {
+//       console.log(`Poll results are ${type}`);
+//     }
+//   },
+// };
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
-(function () {
-  const header = document.querySelector('h1');
-  header.style.color = 'red';
-  document.querySelector('body').addEventListener('click', function () {
-    header.style.color = 'blue';
-  });
-})();
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
+//   document.querySelector('body').addEventListener('click', function () {
+//     header.style.color = 'blue';
+//   });
+// })();
