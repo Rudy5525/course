@@ -79,7 +79,25 @@ const displayMovements = function (movements) {
   });
 };
 displayMovements(account1.movements);
-console.log(containerMovements.innerHTML);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -128,3 +146,55 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // currenciesUnique.forEach(function (value, key, map) {
 //   console.log(`${key}: ${value}`);
 // });
+// Coding Challenge
+
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   let wrongDogsOfJulia = dogsJulia;
+//   let correctDogsOfJulia = wrongDogsOfJulia.splice(1, 2);
+//   let DogsOfKate = dogsKate;
+//   let dogs = correctDogsOfJulia.concat(DogsOfKate);
+//   dogs.forEach(function (age, i) {
+//     let dog;
+//     if (age < 3) {
+//       console.log(`Dog number ${i + 1} is still a puppy`);
+//     } else {
+//       console.log(`Dog number ${i + 1} is an adult`);
+//     }
+//   });
+// };
+
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+// console.log(movements);
+// console.log(movementsUSD);
+
+// const movementsUSDfor = [];
+// for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+// console.log(movementsUSDfor);
+
+// const movementsDescriptions = movements.map(function (move, i) {
+//   `Movement ${
+//     i + 1
+//   }: You ${move > 0 ? 'deposited' : 'withdrew'} ${Math.abs(move)}`;
+// });
+// console.log(movementsDescriptions);
+
+// const deposits = movements.filter(mov => mov > 0);
+// const withdrawals = movements.filter(mov => mov < 0);
+// const balance = movements.reduce((acc, cur) => acc + cur, 0);
+// // console.log(balance);
+// // console.log(withdrawals);
+// // console.log(deposits);
+
+// Maximum value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
