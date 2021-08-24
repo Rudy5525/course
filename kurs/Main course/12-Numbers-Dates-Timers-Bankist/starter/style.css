@@ -295,6 +295,9 @@ h2 {
 .timer {
   font-weight: 600;
 }
+
+/* Removes arrows from input type number field*/
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
